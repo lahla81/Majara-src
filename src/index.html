@@ -5,12 +5,12 @@
         <meta charset="utf-8">
         <link type="image/x-icon" id="favicon" rel="icon" href="./images/logo.ico">
         <title>مجرة</title>
-        <link rel="stylesheet" href="./css/animate.css">
+
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/fontawesome-all.min.css">
         <link rel="stylesheet" href="./css/style.css">
     </head>
-    <body data-spy="scroll" data-target="#navBar">
+    <body data-spy="scroll" data-target="#navBar" data-offset="10">
         <div class="container-fluid">
 
             <!-- start of navbar -->
@@ -41,7 +41,7 @@
                         </div>
                         <div class="navbar-header">
                             <a class="navbar-brand scroll" href="#">
-                                <img src="./images/Group5.png" alt="مجرة">
+                                <img id="logo-image" src="./images/Group5.png" alt="مجرة">
                             </a>
                         </div>
                     </div>
@@ -49,33 +49,34 @@
             </div>
             <!-- end of navbar -->
 
+            <!-- first of Header section -->
             <header id="header">
                 <div class="overlay">  
                     <div class="row header">
-                        <div class="col-sm-6 photo">
-                            <div class="mobile-slider wow fadeInUp">
+                        <div class="col-6 photo">
+                            <div class="mobile-slider">
                                 <img src="./images/Group3018.png" alt="App photo">
                             </div>
                         </div>
-                        <div class="col-sm-6 header-paragraph text-right">
+                        <div class="col-6 header-paragraph text-right">
                             <div class="page-head-text">
-                                <h1 class="majara wow fadeInRight"><span class="dash">ــ</span> مجرة</h1>
-                                <h2 class="wow fadeInRight">تطبيق متاجر متعددة</h2>
-                                <h2 class="wow fadeInRight">لتسوق أكثر متعة</h2>
-                                <h4 class="wow fadeInDown">حمل التطبيق</h4>
-                                <div class="row">
-                                    <div class="play-store google wow flipInX">
+                                <h1 class="majara"><span class="dash">ــ</span> مجرة</h1>
+                                <h2>تطبيق متاجر متعددة</h2>
+                                <h2>لتسوق أكثر متعة</h2>
+                                <h4>حمل التطبيق</h4>
+                                <div class="row header-play-store">
+                                    <div class="play-store google">
                                         <a href="">
                                             <img src="./images/Group1448.png" alt="google play store">
                                         </a>
                                     </div>
-                                    <div class="play-store apple wow flipInX">
+                                    <div class="play-store apple">
                                         <a href="">
                                             <img src="./images/Group1439.png" alt="apple play store">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="on-button row wow zoomInDown">
+                                <div class="on-button row">
                                     <div class="on-off text-center">
                                         <a href="#about">
                                             <img class="group20" src="./images/Group20@2x.png" alt="on/off">
@@ -106,35 +107,39 @@
                     </div>
                 </div>
             </header>
+            <!-- End of Header section -->
 
-            <section id="about">
+            <!-- start of brief section -->
+            <section id="brief">
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-6 paragraph">
-                        <div class="about-logo wow fadeInRight">
+                        <div class="about-logo">
                             <a href="#">
                                 <img src="./images/Group3022@2x.png" alt="مجرة.com">
                             </a>
                         </div>
-                            <p class="wow jackInTheBox">يعطيك تطبيق مجرة تجربة مميزة لتصفح مجموعة متنوعة من المتاجر و الماركات مع إمكانية الشراء والشحن و إرسال الهدايا</p>
+                            <p>يعطيك تطبيق مجرة تجربة مميزة لتصفح مجموعة متنوعة من المتاجر و الماركات مع إمكانية الشراء والشحن و إرسال الهدايا</p>
                     </div>
-                    <div class="col-12 col-sm-6 photo text-center wow fadeInUp">
+                    <div class="col-12 col-sm-6 photo text-center">
                         <img src="./images/Group3017.png" alt="Nice Shopping">
                     </div>
                 </div>
             </section>
+            <!-- end of brief section -->
 
+            <!-- start of feature section -->
             <section id="feature" class="text-center">
-                <h1 class="wow zoomIn">مميزات</h1>
-                <h2 class="wow zoomIn">تطبيق مجرة</h2>
+                <h1>مميزات</h1>
+                <h2>تطبيق مجرة</h2>
                 <div class="row">
                     <div class="col-xl">
                         <div class="row">
-                            <div class="col-lg col-md features wow swing">
+                            <div class="col-lg col-md features">
                                 <img src="./images/Group1395.png" alt="easy to use">
                                 <h4>واجهة مستخدم سهلة</h4>
                                 <p>يتميز تطبيق مجرة بواجهة مستخدم سهلة لتناسب جميع المستخدمين</p>
                             </div>
-                            <div class="col-lg col-md features wow swing">
+                            <div class="col-lg col-md features">
                                 <img src="./images/Group1391.png" alt="Trusted">
                                 <h4>وسائل دفع موثوقة</h4>
                                 <p>يتيح تطبيق مجرة الدفع عن طريق الكريدت كارد أو الدفع عند الإستلام</p>
@@ -143,12 +148,12 @@
                     </div>
                     <div class="col-xl">
                         <div class="row">
-                            <div class="col-lg col-md features wow swing">
+                            <div class="col-lg col-md features">
                                 <img src="./images/Path1531.png" alt="support">
                                 <h4>دعم فني</h4>
                                 <p>يمكن للمستخدمين سهولة التواصل مع الدعم الفني للتطبيق عن طريق الشات</p>
                             </div>
-                            <div class="col-lg col-md features wow swing">
+                            <div class="col-lg col-md features">
                                 <img src="./images/Group3114.png" alt="easy to request">
                                 <h4>سهولة الطلب</h4>
                                 <p>يتيمز مجرة بسهولة الطلب وإتمام عملية الشراء بشكل سلس وسهل</p>
@@ -157,19 +162,23 @@
                     </div>
                 </div>
             </section>
+            <!-- end of feature section -->
 
+            <!-- start of gift section -->
             <section id="gift">
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-6 paragraph">
-                        <h1 class="wow fadeInRight">إضافة المنتج كهدية</h1>
-                        <p class="wow jackInTheBox">يوفر لك تطبيق مجرة خدمة مميزة وجديدة وهي إمكانية الشراء وإرسال المنتجات كهدية للشخص الذي تريد مع تغليف المنتج وإرفاق الرسالة التي تكتبها</p>
+                        <h1>إضافة المنتج كهدية</h1>
+                        <p>يوفر لك تطبيق مجرة خدمة مميزة وجديدة وهي إمكانية الشراء وإرسال المنتجات كهدية للشخص الذي تريد مع تغليف المنتج وإرفاق الرسالة التي تكتبها</p>
                     </div>
-                    <div class="col-12 col-sm-6 photo text-center wow fadeInUp">
+                    <div class="col-12 col-sm-6 photo text-center">
                         <img src="./images/Group3090.png" alt="">
                     </div>
                 </div>
             </section>
-            
+            <!-- end of gift section -->
+        
+            <!-- start of fronts section -->
             <section id="fronts">
                 <div class="text-center title-sm">
                     <h5>واجهات التطبيق</h5>
@@ -251,7 +260,7 @@
                                         <img src="./images/24@2x.png" alt="">
                                     </div>
                                     <div class="item three">
-                                        <img src="./images/10@2x.png" alt="">
+                                        <img src="./images/9@2x.png" alt="">
                                     </div>
                                     <div class="item main text-center">
                                         <div class="carousel-title">المفضلة</div>
@@ -290,6 +299,22 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="item one">
+                                        <img src="./images/18@2x.png" alt="">
+                                    </div>
+                                    <div class="item two">
+                                        <img src="./images/17@2x.png" alt="">
+                                    </div>
+                                    <div class="item three">
+                                        <img src="./images/20@2x.png" alt="">
+                                    </div>
+                                    <div class="item main text-center">
+                                        <div class="carousel-title">مستخدم</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="controls">
                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -304,51 +329,55 @@
                     </div>
                 </div>
             </section>
+            <!-- end of front section -->
 
+            <!-- start of download section -->
             <section id="download">
                 <div class="text-center">
-                    <div class="Group3104 wow zoomIn">
+                    <div class="Group3104">
                         <a href="#">
                             <img src="./images/Group3104.png" alt="Majara">
                         </a>
                     </div>
-                    <h1 class="wow slideInUp">متوفرة للنظامين أندرويد وأيفون</h1>
+                    <h1>متوفرة للنظامين أندرويد وأيفون</h1>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-6 text-left google">
                         <div class="play-store">
                             <a href="">
-                                <img class="wow flipInX" src="./images/Group1448@2x.png" alt="google play store">
+                                <img src="./images/Group1448@2x.png" alt="google play store">
                             </a>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 text-rigth apple">
                         <div class="play-store">
                             <a href="">
-                                <img class="wow flipInX" src="./images/Group1439@2x.png" alt="Apple play store">
+                                <img src="./images/Group1439@2x.png" alt="Apple play store">
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- end of download section -->
 
+            <!-- start of contact us section -->
             <section id="contact-us" class="text-center">
-                <h1 class="wow zoomIn">تواصل معنا</h1>
+                <h1>تواصل معنا</h1>
                 <div class="row social justify-content-center">
                     <ul class="list-inline">
                         <li class="list-inline-item">
                             <a href="#">
-                                <i class="fab fa-instagram fa-lg wow zoomInDown"></i>
+                                <i class="fab fa-instagram fa-lg"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a href="#">
-                                <i class="fab fa-facebook-f fa-lg wow zoomInDown"></i>
+                                <i class="fab fa-facebook-f fa-lg"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a href="#">
-                                <i class="fab fa-twitter fa-lg wow zoomInDown"></i>
+                                <i class="fab fa-twitter fa-lg"></i>
                             </a>
                         </li>
                     </ul>
@@ -356,7 +385,7 @@
                 <div class="row contact-us-form justify-content-center">
                     <form id="contact-form">
                         <div class="row custom-form-row justify-content-center">
-                            <div class="row name-no wow">
+                            <div class="row name-no">
                                 <div id="cname" class="col-sm-6 form-group custom-form-group">
                                     <input type="text" name="name" minlength="2" class="cname form-control custom-form-control" placeholder="الإسم" required>
                                 </div>
@@ -375,11 +404,11 @@
                     </form>
                 </div>
             </section>
+            <!-- end of contact us section -->
                                     
         </div>
         <script src="./js/jquery-3.3.1.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
-        <script src="./js/wow.js"></script>
         <script src="./js/jquery.validate.min.js"></script>
         <script src="./js/messages_ar.min.js"></script>
         <script src="./js/script.js"></script>

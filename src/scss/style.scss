@@ -14,14 +14,15 @@
     body {
         font-family: 'NotoKufiArabic-Bold' ,  'Times New Roman', Times, serif;
         background: rgba($color: #000000, $alpha: 0.02);
+        position: relative;
     }
 
     .container-fluid{
         padding: 0;
-        @media(min-width: 1920px){
+        @media(min-width: 2500px){
             margin-left: auto;
             margin-right: auto;
-            max-width:1920px
+            max-width:2500px
         }
     }
     .row{
@@ -34,38 +35,35 @@
     }
 
     nav#navBar{
-        @media(min-width: 1920px){
+        @media(min-width: 2500px){
             margin-left: auto;
             margin-right: auto;
-            max-width:1920px
+            max-width:2500px
         }
-        padding: 80px 0 0 0 ;
-        @media(max-width: 1600px){
-            padding: 67px 0 0 0;
-        }
-        @media(max-width: 992px){
-            padding: 20px 0 0 0;
-        }
-        transition: all 0.5s ease-in; 
+        padding: 0 ;
+        -webkit-transition: 1s ease padding;
+        background: transparent;
         .navagation{
-            background-color: transparent;
+            -webkit-transition: 1s ease all;
+            transition: 1s ease all;
+            display: -webkit-box;
             display: flex;
             width: 100%;
             justify-content: space-around;
-            padding: 0 151px 0 182px;
+            padding: 80px 151px 0 182px;
             @media(max-width: 1600px){
-                padding: 0 123px 0 145px;
+                padding: 67px 123px 0 145px;
                 justify-content: space-between;
             }
             @media(max-width: 1200px){
-                padding: 0 60px 0 60px;
+                padding: 40px 80px 0 80px;
             }
             @media(max-width: 991.5px){
                 padding-left: 30px;
                 padding-right: 30px;
                 #navbarTogglerDemo01{
                     position: absolute;
-                    background: #3e66e6;
+                    background: $brand-primary;
                     box-shadow:0 20px 40px 0 rgba($color: #000000, $alpha: 0.3);
                     margin-top: 70px;
                     padding-right: 15px;
@@ -77,7 +75,7 @@
                 padding-right: 15px;
             }
             button{
-                margin-top: 5px;
+                padding: 0;
                 i.fa{
                     color: white;
                     padding: 10px;
@@ -89,21 +87,31 @@
                     outline: none;
                     i.fa{
                         outline: none;
-                        color: #3e66e6;
+                        color: $brand-primary;
                         background-color: white;
-                        border: 1px solid #3e66e6;
+                        border: 1px solid $brand-primary;
                     }
                 }
             }
         }
-        li{
-            margin-bottom: 25px;
+        ul{
+            -webkit-transition: 1s ease all;
+            transition: 1s ease all;
+            margin-bottom: 35px;
             @media(max-width: 1600px){
-                margin-bottom: 15px;
+                margin-bottom: 25px;
+            }
+            @media(max-width: 991.5px){
+                margin-bottom: 10px;
+                margin-top: 10px;
+                li{
+                    margin-bottom: 10px;
+                }
             }
         }
         a.nav-link{
             color:white;
+            background: transparent;
             padding: 8px 17px;
             margin: 0 11px ;
             font-size: 20px;
@@ -112,19 +120,17 @@
             &:hover,
             &:focus,
             &:active{
-                &:before{
+                &::before{
                     content: "";
                     position: absolute;
                     width: 48px;
                     height: 3px;
                     background-color: white; 
                     bottom: -8px;
+                    right: 15px;
                     @media(max-width: 1600px){
                         width: 35px;
                         height: 2px;
-                        bottom: 0;
-                    }
-                    @media(max-width: 991px){
                         bottom: 0;
                     }
                 }
@@ -133,16 +139,15 @@
                 padding: 3px 12px;
                 margin: 0 10px ;
                 font-size: 15px;
-                margin-bottom: 10px;
             }
         }
         a.download-link{
-            background-color: #1bc5ff;
+            background-color: $brand-primary1;
             border-radius: 30px;
             padding-left: 25px;
             padding-right: 25px;
             margin-right: 27px;
-            &:before{
+            &::before{
                 display: none;
             }
             &:hover,
@@ -158,9 +163,10 @@
                 margin-right: auto;
                 margin-left: auto;
                 width: 100%;
+                border-radius: 0;
             }
         }
-        a.navbar-brand{     
+        a.navbar-brand{
             float: left;
             width: 240px;
             padding: 0;
@@ -173,21 +179,23 @@
             }
             @media(max-width: 992px){
                 width: 180px;
-                padding-top: 15px;
+            }
+            @media(max-width: 768px){
+                width: 140px;
             }
             @media(max-width: 552px){
                 width: 120px;
             }
         }
         a.nav-link.scroll.active{
-            background: transparent;
-            &:before{
+            &::before{
                 content: "";
                 position: absolute;
                 width: 48px;
                 height: 3px;
                 background-color: white; 
                 bottom: -8px;
+                right: 15px;
                 @media(max-width: 1600px){
                     width: 35px;
                     height: 2px;
@@ -196,24 +204,18 @@
             }
         }
         a.download-link.scroll.active{
-            box-shadow:0 20px 40px 0 rgba($color: #000000, $alpha: 0.3);
+            box-shadow:0 10px 40px 0 rgba($color: #000000, $alpha: 0.3);
+            background: $brand-primary;
         }
     }
 
     #navBar.noTransparrent{
         background: $brand-primary;
-        padding: 0;
         .navagation{
-            padding-bottom: 10px;
-            padding-top: 15px;
-            li{
-                margin-bottom: 0px;
-            }
-            a.navbar-brand{     
-                img{
-                    width: 60%;
-                    float: left;
-                }
+            padding-bottom: 5px;
+            padding-top: 5px;
+            ul{
+                margin-bottom: 0;
             }
         }
     }
@@ -226,7 +228,7 @@
         min-height: 100%;
         padding-bottom: 95px;
         @media(max-width: 992px){
-            background-position: 2% 80%, center center, 0px -120px;
+            background-position: 2% 80%, center center, 0px -50px;
         }
         .overlay{
             padding-top: 224px;
@@ -237,6 +239,9 @@
             }
             @media(max-width: 992px){
                 padding-top: 150px;
+            }
+            @media(max-width: 576px){
+                padding-top: 120px;
             }
             .header{
                 .photo{
@@ -265,13 +270,10 @@
                             }
                         }
                     }
-                    @media(max-width: 577px){
-                        flex: 0 0 100%;
+                    @media(max-width: 576px){
+                        padding-left: 0;
                         .mobile-slider{
-                            width: 65%;
-                            img{
-                                width: 100%;
-                            }
+                            width: 90%;
                         }
                     }
                 }
@@ -281,20 +283,16 @@
                     @media(max-width:1600px){
                         padding-right: 0;
                     }
-                    @media(max-width:992px){
-                        flex: 0 0 50%;
-                        width: 50%;
-                    }
                     @media(max-width:576px){
-                        flex: 0 0 100%;
-                        width: 100%;
-                        margin-left: auto;
-                        margin-right: auto;
+                        padding-left: 0;
                     }
                     .page-head-text{
                         margin-top: 37px;
                         @media(max-width:1600px){
                             margin-top: 34px;
+                        }
+                        @media(max-width:471px){
+                            margin-top: 20px;
                         }
                         h1.majara{
                             font-size: 30px;
@@ -315,6 +313,9 @@
                                     font-size: 24px;
                                 }
                             }
+                            @media(max-width:576px){
+                                padding-right: 0;
+                            }
                         }
                         h2{
                             font-size: 40px;
@@ -334,6 +335,23 @@
                                 font-size: 27px;
                                 line-height: 48px;
                             }
+                            @media(max-width:576px){
+                                padding-right: 0;
+                                font-size: 22px;
+                                line-height: 36px;
+                            }
+                            @media(max-width:471px){
+                                font-size: 20px;
+                                line-height: 30px;
+                            }
+                            @media(max-width:375px){
+                                font-size: 18px;
+                                line-height: 26px;
+                            }
+                            @media(max-width:393px){
+                                font-size: 16px;
+                                line-height: 22px;
+                            }
                         }
                         h4{
                             font-size: 30px;
@@ -347,8 +365,25 @@
                                 margin-bottom: 27px;
                                 padding-right: 8px;
                             }
-                            @media(max-width:575px){
-                                text-align: center;
+                            @media(max-width:576px){
+                                font-size: 20px;
+                                margin-top: 40px;   
+                                margin-bottom: 20px;
+                            }
+                            @media(max-width:471px){
+                                font-size: 18px;
+                                margin-top: 30px;   
+                                margin-bottom: 24px;
+                            }
+                            @media(max-width:375px){
+                                font-size: 16px;
+                                margin-top: 24px;   
+                                margin-bottom: 16px;
+                            }
+                            @media(max-width:393px){
+                                font-size: 14px;
+                                margin-top: 20px;   
+                                margin-bottom: 12px;
                             }
                         }
                         h1,h2,h4{
@@ -362,6 +397,11 @@
                         }
                         h2,h4{
                             font-family: NotoKufiArabic-Regular;
+                        }
+                        @media(max-width:576px){
+                            .header-play-store{
+                                justify-content: space-around;
+                            }
                         }
                         .play-store{
                             width: 226.7px;
@@ -377,6 +417,9 @@
                             }
                             &.google{
                                 margin-left: 25px;
+                                @media(max-width:768px){
+                                    margin-left: 0px;
+                                }
                             }
                             @media(max-width:1600px){
                                 width: 190px;
@@ -398,6 +441,8 @@
                             }
                             @media(max-width:576px){
                                 margin-bottom: 20px;
+                                padding-right: 0px;
+                                margin-right: 0;
                             }
                         }
                         .on-button{
@@ -419,16 +464,14 @@
                                     margin-left: auto;
                                 }
                                 @media(max-width: 576px){
-                                    margin-bottom: 50px;
+                                    margin-bottom: 30px;
+                                    img{
+                                        width: 20px;
+                                    }
                                 }
                             }
                             @media(max-width: 1250px){
                                 margin-left: 18px;
-                            }
-                            @media(max-width: 576px){
-                                margin-left: 5px;
-                                margin-right: 5px;
-                                padding: 20px;
                             }
                             .group20{
                                 &:active,
@@ -459,24 +502,21 @@
                                         @media(max-width:768px){
                                             margin-left: 40px;
                                         }
-                                        @media(max-width:576px){
-                                            margin-left: 60px;
+                                        @media(max-width:400px){
+                                            margin-left: 20px;
                                         }
                                     }
                                     li{
                                         a{
                                             color: white;
-                                            @media(max-width: 575.5px){
-                                                color: $brand-primary;
-                                            }
                                             i.fab{
                                                 font-size: 34px;
                                                 font-weight: normal;
                                                 @media(max-width: 1600px){
                                                     font-size: 27px;
                                                 }
-                                                @media(max-width: 576px){
-                                                    margin-top: 50px;
+                                                @media(max-width: 400px){
+                                                    font-size: 22px;
                                                 }
                                             }
                                             i.fa-instagram{
@@ -511,7 +551,7 @@
         }
     }
 
-    #about{
+    #brief{
         padding: 185px 10px 215px;       
         @media(max-width:1600px){
             padding: 140px 115px;
@@ -619,7 +659,7 @@
             }
         }
         h2{
-            color:$brand-secondary;
+            color: #141414;
             font-family: NotoKufiArabic-Regular;
             font-size: 40px;
             line-height: 76px;
@@ -629,6 +669,7 @@
                 line-height: 40px;
                 margin-bottom: 44px;
             }
+            //01001134692 محمد الشناوي 
         }
         .features{
             padding: 58px 20px 37px;
@@ -697,6 +738,9 @@
         }
         .paragraph{
             padding-bottom: 20px;
+            display: -webkit-flex;
+            -webkit-flex-direction: column;
+            -webkit-justify-content: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -772,15 +816,18 @@
         padding-top: 137px;
         position: relative;
         background: transparent;
+        @media(max-width:992px){
+            padding-bottom: 80px;
+            padding-top: 80px;
+        }
         &:after {
             content:"";
-            background:rgba($color: #1BC5FF, $alpha: 0.05);
+            background:rgba($color: $brand-primary1, $alpha: 0.05);
             position: absolute;
             right: 0;
             left: 43%;
             top:0;
             bottom: 0;
-            content:" ";
             z-index:-1;
         }
         .title-sm{
@@ -790,7 +837,7 @@
                 h5{
                     font-size: 24px;
                     line-height: 45px;
-                    color: #467dc0;
+                    color: $brand-secondary;
                     margin-bottom: 25px;
                 }
             }
@@ -800,7 +847,7 @@
             left: 19%;
             bottom: 52%;
             transform: translateX(-50%);
-            color: #467dc0;
+            color: $brand-secondary;
             font-size: 40px;
             line-height: 76px;
             @media(max-width: 1600px){
@@ -868,7 +915,6 @@
                     position: absolute;
                     top: 51%;
                     left: 18%;
-                    
                     transform: translateX(-50%);
                     .carousel-title{
                         font-size: 30px;
@@ -1032,7 +1078,7 @@
 
     #contact-us{
         padding-top: 103px;
-        padding-bottom: 97px;
+        padding-bottom: 98px;
         background-image: url(../images/MaskGroup21.png);
         background-size: cover;
         background-position: center top;
@@ -1124,7 +1170,7 @@
                 @media(max-width: 1600px){
                     font-size: 16px;
                     line-height: 28px;
-                    padding:28px 30px;
+                    padding: 28px 30px;
                 }
                 @media(max-width: 575px){
                     padding: 20px;
@@ -1169,7 +1215,6 @@
                 &:focus,
                 &:active{
                     box-shadow: none;
-                    
                 }
                 @media(max-width: 1600px){
                     font-size: 20px;
@@ -1190,7 +1235,7 @@
                 padding:10px 80px;
                 border-radius: 34px;
             }
-            @media(max-width: 575px){
+            @media(max-width: 575.5px){
                 .cname{
                     border-top-right-radius: 10px;
                     border-top-left-radius: 10px;

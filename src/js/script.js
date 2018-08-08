@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     // change properties of navbar when scroll down 50px
     $(window).scroll(function(){
-        if($(this).scrollTop()>=100){
+        if($(this).scrollTop()>=50){
             $("#navBar").addClass("noTransparrent");
         }
         else{
@@ -10,17 +10,13 @@ $(document).ready(function(){
         }
     });
 
-    // to animate when travelling across the page
+    //to animate when travelling across the page
     $("a.scroll").on('click', function(event){
+        event.preventDefault();
         var hash = this.hash;
-        $('html, body').animate({scrollTop: $(hash).offset().top},800,function(){});
+        $('html, body').animate({scrollTop: $(hash).offset().top},1400,function(){});
     });
 
-    // animation
-    var wow = new WOW({
-        mobile:false
-    });
-    wow.init();
 
     // Hide navbar menu after click link (small monitor) 
     $(".navbar-nav li a").click(function(event) {
