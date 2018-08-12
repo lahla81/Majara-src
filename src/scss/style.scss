@@ -1,20 +1,20 @@
 
     @font-face{
         font-family: NotoKufiArabic-Regular;
-        src: url(../webfonts/NotoKufiArabic-Regular.ttf);
+        src: url(../fonts/NotoKufiArabic-Regular.ttf);
     }
 
     @font-face{
         font-family: NotoKufiArabic-Bold;
-        src: url(../webfonts/NotoKufiArabic-Bold.ttf);
+        src: url(../fonts/NotoKufiArabic-Bold.ttf);
     }
 
     @import '_variables';
+    @import 'icons/_style';
 
     body {
         font-family: 'NotoKufiArabic-Bold' ,  'Times New Roman', Times, serif;
         background: rgba($color: #000000, $alpha: 0.02);
-        position: relative;
     }
 
     .container-fluid{
@@ -40,9 +40,14 @@
             margin-right: auto;
             max-width:2500px
         }
+        opacity: 1;
+        overflow: visible;
+        z-index: 100;
         padding: 0 ;
-        -webkit-transition: 1s ease padding;
-        background: transparent;
+        -webkit-transition: .2s ease all;
+        transition: 1s ease all;
+        background-image: -webkit-gradient(linear, left top, right bottom, from(#4265E4), to(#2972F0));
+        background: gradient(linear, left top, right bottom, from(#4265E4), to(#2972F0));
         .navagation{
             -webkit-transition: 1s ease all;
             transition: 1s ease all;
@@ -61,6 +66,7 @@
             @media(max-width: 991.5px){
                 padding-left: 30px;
                 padding-right: 30px;
+                position: relative;
                 #navbarTogglerDemo01{
                     position: absolute;
                     background: $brand-primary;
@@ -68,6 +74,7 @@
                     margin-top: 70px;
                     padding-right: 15px;
                     padding-left: 15px;
+                    z-index: 105;
                 }
             }
             @media(max-width:552px){
@@ -76,16 +83,17 @@
             }
             button{
                 padding: 0;
-                i.fa{
+                i.icon-menu{
                     color: white;
-                    padding: 10px;
+                    padding: 7px 10px;
                     border: 1px solid white;
+                    font-size: 30px;
                 }
                 &:hover,
                 &:focus,
                 &:active{
                     outline: none;
-                    i.fa{
+                    i.icon-menu{
                         outline: none;
                         color: $brand-primary;
                         background-color: white;
@@ -117,6 +125,7 @@
             font-size: 20px;
             line-height: 38px;
             position: relative;
+            z-index: 105;
             &:hover,
             &:focus,
             &:active{
@@ -128,6 +137,7 @@
                     background-color: white; 
                     bottom: -8px;
                     right: 15px;
+                    z-index: 105;
                     @media(max-width: 1600px){
                         width: 35px;
                         height: 2px;
@@ -159,7 +169,7 @@
                 padding-left: 20px;
                 padding-right: 20px;
             }
-            @media(max-width: 991px){
+            @media(max-width: 991.5px){
                 margin-right: auto;
                 margin-left: auto;
                 width: 100%;
@@ -196,6 +206,7 @@
                 background-color: white; 
                 bottom: -8px;
                 right: 15px;
+                z-index: 105;
                 @media(max-width: 1600px){
                     width: 35px;
                     height: 2px;
@@ -210,7 +221,6 @@
     }
 
     #navBar.noTransparrent{
-        background: $brand-primary;
         .navagation{
             padding-bottom: 5px;
             padding-top: 5px;
@@ -445,100 +455,112 @@
                                 margin-right: 0;
                             }
                         }
-                        .on-button{
-                            margin-right: 18px;
-                            margin-left: 167px;
-                            @media(max-width:1600px){
-                                padding-right: 8px;
-                                margin-left: 92px;
-                                .on-off{
-                                    img{
-                                        width: 25px;
-                                    }
-                                }
-                            }
+                    }
+                    .on-button{
+                        margin-right: 18px;
+                        margin-left: 167px;
+                        position: relative;
+                        z-index: 20;
+                        @media(max-width:1600px){
+                            padding-right: 8px;
+                            margin-left: 92px;
                             .on-off{
-                                @media(max-width: 600px){
-                                    width: 100%;
-                                    margin-right: auto;
-                                    margin-left: auto;
-                                }
-                                @media(max-width: 576px){
-                                    margin-bottom: 30px;
-                                    img{
-                                        width: 20px;
-                                    }
+                                img{
+                                    width: 25px;
                                 }
                             }
-                            @media(max-width: 1250px){
-                                margin-left: 18px;
-                            }
-                            .group20{
-                                &:active,
-                                &:focus,
-                                &:hover{
-                                box-shadow:0 10px 40px 0 rgba($color: #000000, $alpha: 0.3);
-                                }
-                            }
-                            .social{
+                        }
+                        @media(max-width: 1250px){
+                            margin-left: 18px;
+                        }
+                        @media(max-width:552px){
+                            margin-left: 0;
+                            margin-right: 0;
+                            padding-right: 0;
+                        }
+                        .on-off{
+                            @media(max-width: 600px){
+                                width: 100%;
                                 margin-right: auto;
-                                margin-top: 20px;
-                                @media(max-width: 1600px){
-                                    margin-top: 18px;
+                                margin-left: auto;
+                            }
+                            @media(max-width: 576px){
+                                margin-bottom: 30px;
+                                img{
+                                    width: 20px;
                                 }
-                                @media(max-width:600px){
-                                    margin-left: auto;
-                                }
-                                ul{
-                                    margin-bottom: 0;
-                                    li.instagram,li.facebook{
-                                        margin-left: 80px;
-                                        @media(max-width: 1600px){
-                                            margin-left: 62px;
-                                        }
-                                        @media(max-width:992px){
-                                            margin-left: 50px;
-                                        }
-                                        @media(max-width:768px){
-                                            margin-left: 40px;
-                                        }
-                                        @media(max-width:400px){
-                                            margin-left: 20px;
-                                        }
+                            }
+                        }
+                        .group20{
+                            &:active,
+                            &:focus,
+                            &:hover{
+                            box-shadow:0 10px 40px 0 rgba($color: #000000, $alpha: 0.3);
+                            }
+                        }
+                        .social{
+                            margin-right: auto;
+                            margin-top: 20px;
+                            position: absolute;
+                            left: 0;
+                            z-index: 30;
+                            @media(max-width: 1600px){
+                                margin-top: 18px;
+                            }
+                            @media(max-width:600px){
+                                margin-left: auto;
+                                position: unset;
+                            }
+                            ul{
+                                margin-bottom: 0;
+                                li.instagram,li.facebook{
+                                    margin-left: 80px;
+                                    @media(max-width: 1600px){
+                                        margin-left: 62px;
                                     }
-                                    li{
-                                        a{
-                                            color: white;
-                                            i.fab{
-                                                font-size: 34px;
-                                                font-weight: normal;
-                                                @media(max-width: 1600px){
-                                                    font-size: 27px;
-                                                }
-                                                @media(max-width: 400px){
-                                                    font-size: 22px;
-                                                }
+                                    @media(max-width:992px){
+                                        margin-left: 50px;
+                                    }
+                                    @media(max-width:768px){
+                                        margin-left: 40px;
+                                    }
+                                    @media(max-width:420px){
+                                        margin-left: 20px;
+                                    }
+                                }
+                                li{
+                                    a{
+                                        color: white;
+                                        text-decoration: none;
+                                        i.icon{
+                                            font-size: 30px;
+                                            font-weight: normal;
+                                            @media(max-width: 1600px){
+                                                font-size: 24px;
                                             }
-                                            i.fa-instagram{
-                                                &:hover,
-                                                &:active,
-                                                &:focus{
-                                                    color: #e4405f;
-                                                }
+                                            @media(max-width: 400px){
+                                                font-size: 18px;
                                             }
-                                            i.fa-facebook-f{
-                                                &:hover,
-                                                &:active,
-                                                &:focus{
-                                                    color: #3b5999;
-                                                }
+                                        }
+                                        i.icon-instagram{
+                                            &:hover,
+                                            &:active,
+                                            &:focus{
+                                                color: #e4405f;
                                             }
-                                            i.fa-twitter{
-                                                &:hover,
-                                                &:active,
-                                                &:focus{
-                                                    color: #55acee;
-                                                }
+                                        }
+                                        i.icon-facebook{
+                                            &:hover,
+                                            &:active,
+                                            &:focus{
+                                                color: #3b5999;
+                                            }
+                                        }
+                                        i.icon-twitter{
+                                            &:hover,
+                                            &:active,
+                                            &:focus{
+                                                color: #55acee;
                                             }
                                         }
                                     }
@@ -569,7 +591,6 @@
             padding: 20px;
         }
         .paragraph{
-            padding-top: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -612,6 +633,7 @@
                 }
                 @media(max-width: 576px){
                     font-size: 20px;
+                    margin-bottom: 25px;
                 }
             }
         }
@@ -737,10 +759,6 @@
             padding-bottom: 80px;
         }
         .paragraph{
-            padding-bottom: 20px;
-            display: -webkit-flex;
-            -webkit-flex-direction: column;
-            -webkit-justify-content: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -752,9 +770,9 @@
                 padding-right: 10px;
                 padding-left: 10px
             }
-            
             @media(max-width: 552px){
-                padding-right: 15px
+                padding-right: 15px;
+                padding-bottom: 20px;
             }
             h1{
                 color:$brand-primary;
@@ -812,28 +830,12 @@
     }
 
     #fronts{
-        padding-bottom: 137px;
-        padding-top: 137px;
-        position: relative;
-        background: transparent;
-        @media(max-width:992px){
-            padding-bottom: 80px;
-            padding-top: 80px;
-        }
-        &:after {
-            content:"";
-            background:rgba($color: $brand-primary1, $alpha: 0.05);
-            position: absolute;
-            right: 0;
-            left: 43%;
-            top:0;
-            bottom: 0;
-            z-index:-1;
-        }
+        overflow: hidden;
         .title-sm{
             display: none;
             @media(max-width: 576px){
                 display: block;
+                width: 100%;
                 h5{
                     font-size: 24px;
                     line-height: 45px;
@@ -842,14 +844,38 @@
                 }
             }
         }
+        .fronts-row{
+            overflow: hidden;
+            background: transparent;
+            position: relative;
+            padding-bottom: 137px;
+            padding-top: 137px;
+            z-index: 10;
+            @media(max-width:992px){
+                padding-bottom: 80px;
+                padding-top: 80px;
+            }
+            &:after {
+                content:"";
+                background:rgba($color: $brand-primary1, $alpha: 0.05);
+                position: absolute;
+                right: 0;
+                left: 43%;
+                top:0;
+                bottom: 0;
+                z-index:5;
+            }
+        }
         h2{
             position: absolute;
             left: 19%;
             bottom: 52%;
+            -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
             color: $brand-secondary;
             font-size: 40px;
             line-height: 76px;
+            z-index: 20;
             @media(max-width: 1600px){
                 font-size: 30px;
                 line-height: 55px;
@@ -915,7 +941,9 @@
                     position: absolute;
                     top: 51%;
                     left: 18%;
+                    -webkit-transform: translateX(-50%);
                     transform: translateX(-50%);
+                    z-index: 20;
                     .carousel-title{
                         font-size: 30px;
                         color: $brand-primary1;
@@ -957,10 +985,17 @@
                     height: 70px;
                     width: 70px;
                     top: 50%;
-                    i.fas{
+                    display: block;
+                    text-decoration: none;
+                    i.icon{
                         color: $brand-primary1;
                         font-size: 18px;
                         font-weight: NotoKufiArabic-Regular;
+                        position: absolute;
+                        top: 50%;
+                        right: 50%;
+                        -webkit-transform: translate(50% , -50%);
+                        transform: translate(50% , -50%);
                     }
                     @media(max-width: 1600px){
                         height: 50px;
@@ -977,6 +1012,7 @@
                 }
                 .carousel-control-prev{
                     left: 12%;
+                    -webkit-transform: translateX(-50%);
                     transform: translateX(-50%);
                     @media(max-width: 1200px){
                         left: 10%;
@@ -987,6 +1023,7 @@
                 }
                 .carousel-control-next{
                     right: 74%;
+                    -webkit-transform: translateX(50%);
                     transform: translateX(50%);
                     @media(max-width: 1200px){
                         right: 72%;
@@ -1083,6 +1120,7 @@
         background-size: cover;
         background-position: center top;
         background-repeat: no-repeat;
+        overflow: hidden;
         @media(max-width:1600px){
             padding-top: 80px;
             padding-bottom: 80px;
@@ -1101,35 +1139,38 @@
         }
         .social{
             margin-bottom: 61px;
-            i.fab{
+            a{
+                text-decoration: none;
+            }
+            i.icon{
                 font-size: 24px;
                 color: white;
                 margin-left: 25px;
                 margin-right: 25px;
             }
             @media(max-width:1600px){
-                i.fab{
+                i.icon{
                     font-size: 20px;
                     margin-left: 14px;
                     margin-right: 14px;
                 }
                 margin-bottom: 20px;
             }
-            i.fa-instagram{
+            i.icon-instagram{
                 &:hover,
                 &:active,
                 &:focus{
                     color: #e4405f;
                 }
             }
-            i.fa-facebook-f{
+            i.icon-facebook{
                 &:hover,
                 &:active,
                 &:focus{
                     color: #3b5999;
                 }
             }
-            i.fa-twitter{
+            i.icon-twitter{
                 &:hover,
                 &:active,
                 &:focus{
@@ -1141,8 +1182,9 @@
             width: 50%;
             margin-left: auto;
             margin-right: auto;
-            .custom-form-row{
+            .custom-inputs{
                 box-shadow:0 20px 40px 0 rgba($color: #30373E, $alpha: 0.3);
+                border-radius: 10px;
             }
             .name-no{
                 width: 100%;

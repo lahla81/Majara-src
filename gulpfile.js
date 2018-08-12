@@ -61,13 +61,13 @@ gulp.task('files',function() {
     .pipe(connect.reload());
 });
 
-gulp.task('webfonts',function() {
-    return gulp.src('src/webfonts/*')
-    .pipe(gulp.dest('build/webfonts/'))
+gulp.task('fonts',function() {
+    return gulp.src('src/fonts/*')
+    .pipe(gulp.dest('build/fonts/'))
     .pipe(connect.reload());
 });
 
 
 
-gulp.task('build',['html','css','js','images','files','webfonts','scss']);
+gulp.task('build',['html','css','js','images','files','fonts','scss']);
 gulp.task('default',['build','connect','watch']);

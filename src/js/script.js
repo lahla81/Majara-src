@@ -12,11 +12,13 @@ $(document).ready(function(){
 
     //to animate when travelling across the page
     $("a.scroll").on('click', function(event){
+        if(""!==this.hash){
         event.preventDefault();
         var hash = this.hash;
-        $('html, body').animate({scrollTop: $(hash).offset().top},1400,function(){});
+        $('html, body').animate({scrollTop: $(hash).offset().top},1400,function(){});    
+        }
     });
-
+            
 
     // Hide navbar menu after click link (small monitor) 
     $(".navbar-nav li a").click(function(event) {
